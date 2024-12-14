@@ -6,248 +6,47 @@
     <title>Student Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2a9d8f;
-            --secondary-color: #264653;
-            --accent-color: #e9c46a;
-            --text-color: #2b2d42;
-            --light-bg: #f8f9fa;
-            --hover-color: #e76f51; /* Color for hover effect */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-        }
-
-        nav {
-            position: fixed;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px);
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .logo {
-            color: var(--primary-color);
-            font-size: 2rem;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-
-        .logo:hover {
-            color: var(--hover-color);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav ul li a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            padding: 0.7rem 1.2rem;
-            font-weight: 500;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-            background-color: rgba(42, 157, 143, 0.1);
-            border-radius: 25px;
-        }
-
-        section {
-            padding: 3rem 6rem;
-            min-height: 100vh;
-        }
-
-        #home {
-            background: linear-gradient(135deg, rgba(42,157,143,0.9), rgba(38,70,83,0.9)), url('background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #fff, var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: transform 0.3s ease;
-        }
-
-        .hero h1:hover {
-            transform: scale(1.1);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-content img {
-            width: 350px;
-            margin-top: 40px;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .about-content img:hover {
-            transform: scale(1.02);
-            box-shadow: 30px 30px 80px rgba(0,0,0,0.2);
-        }
-
-        .hobbies-skills-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem; /* Space between hobbies and skills */
-        }
-
-        #hobbies, #skills {
-            flex: 1; /* Allow both sections to grow equally */
-        }
-
-        .hobby-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            padding: 2rem 0;
-        }
-
-        .hobby-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hobby-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        }
-
-        .skills-container {
-            padding: 3rem 0;
-        }
-
-        .skill {
-            background: var(--light-bg);
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-            position: relative; /* Ensure positioning context for child elements */
-        }
-
-        .skill:hover {
-            transform: translateX(10px);
-            background: var(--primary-color); /* Change to primary color on hover */
-            color: white; /* Change text color to white on hover */
-        }
-
-        /* Progress bar styles */
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background: #ddd; /* Background color for the progress bar */
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 10px;
-            transition: background 0.3s ease; /* Smooth transition for background color */
-        }
-
-        /* Progress styles */
-        .progress {
-            height: 100%;
-            background: var(--primary-color); /* Use a contrasting color for the progress */
-            text-align: center;
-            color: var(--light-bg); /* Use light background color for text */
-            line-height: 20px;
-            transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for colors */
-        }
-
-        .skill:hover .progress {
-            color: var(--primary-color); /* Keep progress color as primary on skill hover */
-            background: var(--light-bg); /* Ensure text color remains legible */
-        }
-
-        footer {
-            background: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 2.5rem;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--accent-color);
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <nav>
         <div class="logo">My Portfolio</div>
         <ul>
-            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
             <li><a href="#hobbies-skills"><i class="fas fa-gamepad"></i> Hobbies & Skills</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="#location"><i class="fas fa-map-marker-alt"></i> Location</a></li> <!-- Added Location link -->
         </ul>
     </nav>
+    
 
-    <section id="home">
-        <div class="hero">
-            <h1>Hi, I'm Yash</h1>
-            <p>Student at KIET Group Of Institutions</p>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a passionate aspiring developer constantly learning and growing.</p>
+            <a href="#about" class="btn">Learn More About Me</a>
+            <!-- Social Links in Hero Section -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/yash-yadav-868388328?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5sPzNTkdRVuvzh3baG48Pg%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Yash12212" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:yashyadav12212@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            </div>
+
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <div class="about-content">
-            <img src="yash.jpg" alt="Profile Photo">
-            <p>I'm a passionate student pursuing B.Tech in CSE. I love creating and learning new things.</p>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="yash.jpg" alt="Your Name" />
+            </div>
+            <div class="about-text">
+                <p>Hello, I'm Yash. A beginner developer with a strong interest in web development and a passion for learning new technologies. I'm excited to create clean and user-friendly websites and applications that can make a difference. I'm always eager to improve my skills and grow in the tech world.</p>
+            </div>
         </div>
     </section>
 
@@ -255,21 +54,30 @@
         <h2>My Hobbies & Skills</h2>
         <div class="hobbies-skills-container">
             <div id="hobbies">
-                <h2>My Hobbies</h2>
+                <h3>My Hobbies</h3>
                 <div class="hobby-grid">
                     <div class="hobby-card">
-                        <h3><i class="fas fa-book"></i> Reading</h3>
-                        <p>Exploring books on technology and science.</p>
+                        <h4><i class="fas fa-chess"></i> Chess</h4>
+                        <p>Strategizing and competing in chess games to sharpen my mind.</p>
                     </div>
                     <div class="hobby-card">
-                        <h3><i class="fas fa-gamepad"></i> Gaming</h3>
-                        <p>Strategy games and coding challenges are my favorite.</p>
+                        <h4><i class="fas fa-laptop-code"></i> Coding</h4>
+                        <p>Building projects and solving problems through programming.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <h4><i class="fas fa-gamepad"></i> Gaming</h4>
+                        <p>Enjoying strategy games and immersive experiences in virtual worlds.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <h4><i class="fas fa-tv"></i> Anime Watching</h4>
+                        <p>Watching anime and diving into different stories and worlds.</p>
                     </div>
                 </div>
             </div>
+            
 
             <div id="skills">
-                <h2 >Skills</h2>
+                <h3>Skills</h3>
                 <div class="skills-container">
                     <div class="skill">
                         <i class="fab fa-html5"></i> HTML5
@@ -277,30 +85,47 @@
                     </div>
                     <div class="skill">
                         <i class="fab fa-css3-alt"></i> CSS3
-                        <div class="progress-bar"><div class="progress" style="width: 85%;">85%</div></div>
+                        <div class="progress-bar"><div class="progress" style="width: 65%;">65%</div></div>
                     </div>
                     <div class="skill">
                         <i class="fab fa-python"></i> Python
                         <div class="progress-bar"><div class="progress" style="width: 80%;">80%</div></div>
                     </div>
                     <div class="skill">
-                        <i class="fas fa-cogs"></i> C
-                        <div class="progress-bar"><div class="progress" style="width: 75%;">75%</div></div>
+                        <i class="fas fa-cogs"></i> NumPy, Pandas, Matplotlib
+                        <div class="progress-bar"><div class="progress" style="width: 55%;">55%</div></div>
                     </div>
-                </div>
-            </div>
+                    <div class="skill">
+                        <i class="fas fa-database"></i> MySQL
+                        <div class="progress-bar"><div class="progress" style="width: 80%;">80%</div></div>
+                    </div>
+                </div>                
+            </div>            
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-        <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    <section id="location">
+        <h2>My Location</h2>
+        <p>Here is where you can find me!</p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6981.891387202628!2d77.63780328774432!3d28.959335189329842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c66a2deee8e85%3A0xa0e07b6e18ca8139!2sVed%20Vyas%20Puri%20-Phase%201%2C%20Meerut%2C%20Uttar%20Pradesh%20250002!5e0!3m2!1sen!2sin!4v1734197020523!5m2!1sen!2sin"
+            width="90%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </section>
+    
 
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yash-yadav-868388328?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5sPzNTkdRVuvzh3baG48Pg%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Yash12212" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:yashyadav12212@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>        
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
 
 </body>
