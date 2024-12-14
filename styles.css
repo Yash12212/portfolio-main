@@ -347,7 +347,7 @@ footer p {
 
 
 /* Responsive Styles for max-width 360px */
-@media (max-width: 360px) {
+@media (max-width: 400px) {
     body {
         font-size: 14px; /* Use a smaller font size for small screens */
         line-height: 1.6;
@@ -495,7 +495,7 @@ footer p {
 
     .map-container {
         height: 250px; /* Smaller map height for small screens */
-        margin-bottom: 2rem; /* Space below map */
+        margin-bottom: 1rem; /* Space below map */
     }
 
     footer {
