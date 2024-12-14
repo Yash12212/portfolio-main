@@ -3,44 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    .container {display: flex; width: 100%;}
-   .left{ flex: 1; background-color: aqua;}
-   .right{flex: 2; background-color: white;} 
-
-  </style>
+    <title>Student Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class = "container">
-    <div class = "left">
-        <h2>  </h2>
-        <p>
-            <img src = "sk.jpeg" width="100%" height="100%"></href> </p>
-            <h1 align="center">SKANDH HANDA</h1>
-            <h3 align = "center">Web Designer</h3>
-        </p>
-        <br>
-            <ul>
-                <img src="home icon" width="30" height="30">Meerut (250002) , Uttar Pradesh</p>
-                <br>
-                <p> </p>
-                <img src="text" width="30" height="30">    skandh.2428cse2470@kiet.edu
-                </p>
-            </ul>
-            <hr>
-            <h3 style="padding-left: 40px; font-size: 30px;" >Skill's</h3>  
-            <p> HTML</p><progress value ="70" max="100" style="width: 100%; margin-left: 10; margin-right: 10;"></progress>
-    </div>
-    <div class="right">
-        <h2> </h2>
-    <p style="font-size: 30px; padding-left: 40px; color: rgb(10, 211, 211);"><b> A Bit About Me</p></b>
-    <p style="padding-left: 40px; font-size: 20px;"> I, SKANDH HANDA, attended at KIET Group of Institute, pursuing my Bachelor's in Computer Science And Enginnering.</p>
-        <div style="padding-left: 40px;"> <hr> </div>
-        
-    </p>
-    </div>
-</div>
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
+    <section id="home">
+        <div class="hero">
+            <h1>Hi, I'm Yash</h1>
+            <p>Student at KIET Group Of Institutions</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="yash.jpg" alt="Profile Photo">
+            <p>I'm a passionate student pursuing B.Tech in CSE. I love creating and learning new things.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project Title 1</h3>
+                <p>Project description goes here</p>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project Title 2</h3>
+                <p>Project description goes here</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">Python</div>
+            <div class="skill">C</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p>Email: your.email@example.com</p>
+            <p>LinkedIn: linkedin.com/in/yourprofile</p>
+            <p>GitHub: github.com/yourusername</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
