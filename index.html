@@ -75,7 +75,7 @@
         }
 
         section {
-            padding: 8rem 4rem;
+            padding: 3rem 6rem;
             min-height: 100vh;
         }
 
@@ -115,14 +115,27 @@
 
         .about-content img {
             width: 350px;
-            border-radius: 30%;
+            margin-top: 40px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            object-fit: cover;
+            object-position: center;
         }
 
         .about-content img:hover {
             transform: scale(1.02);
             box-shadow: 30px 30px 80px rgba(0,0,0,0.2);
+        }
+
+        .hobbies-skills-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem; /* Space between hobbies and skills */
+        }
+
+        #hobbies, #skills {
+            flex: 1; /* Allow both sections to grow equally */
         }
 
         .hobby-grid {
@@ -156,35 +169,40 @@
             border-radius: 50px;
             font-weight: 500;
             margin-bottom: 1rem;
-            transition: transform 0.3s ease, background 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+            position: relative; /* Ensure positioning context for child elements */
         }
 
         .skill:hover {
             transform: translateX(10px);
-            background: var(--primary-color);
-            color: white;
+            background: var(--primary-color); /* Change to primary color on hover */
+            color: white; /* Change text color to white on hover */
         }
 
-        .skill:hover .progress-bar {
-            border: 2px solid var(--light-bg); /* Adds a border on hover */
-        }
-
-
+        /* Progress bar styles */
         .progress-bar {
             width: 100%;
             height: 20px;
-            background: #ddd;
+            background: #ddd; /* Background color for the progress bar */
             border-radius: 10px;
             overflow: hidden;
             margin-top: 10px;
+            transition: background 0.3s ease; /* Smooth transition for background color */
         }
 
+        /* Progress styles */
         .progress {
             height: 100%;
-            background: var(--primary-color);
+            background: var(--primary-color); /* Use a contrasting color for the progress */
             text-align: center;
-            color: white;
+            color: var(--light-bg); /* Use light background color for text */
             line-height: 20px;
+            transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for colors */
+        }
+
+        .skill:hover .progress {
+            color: var(--primary-color); /* Keep progress color as primary on skill hover */
+            background: var(--light-bg); /* Ensure text color remains legible */
         }
 
         footer {
@@ -213,8 +231,7 @@
         <ul>
             <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-            <li><a href="#hobbies"><i class="fas fa-gamepad"></i> Hobbies</a></li>
-            <li><a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a></li>
+            <li><a href="#hobbies-skills"><i class="fas fa-gamepad"></i> Hobbies & Skills</a></li>
             <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
     </nav>
@@ -234,38 +251,43 @@
         </div>
     </section>
 
-    <section id="hobbies">
-        <h2>My Hobbies</h2>
-        <div class="hobby-grid">
-            <div class="hobby-card">
-                <h3><i class="fas fa-book"></i> Reading</h3>
-                <p>Exploring books on technology and science.</p>
+    <section id="hobbies-skills">
+        <h2>My Hobbies & Skills</h2>
+        <div class="hobbies-skills-container">
+            <div id="hobbies">
+                <h2>My Hobbies</h2>
+                <div class="hobby-grid">
+                    <div class="hobby-card">
+                        <h3><i class="fas fa-book"></i> Reading</h3>
+                        <p>Exploring books on technology and science.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <h3><i class="fas fa-gamepad"></i> Gaming</h3>
+                        <p>Strategy games and coding challenges are my favorite.</p>
+                    </div>
+                </div>
             </div>
-            <div class="hobby-card">
-                <h3><i class="fas fa-gamepad"></i> Gaming</h3>
-                <p>Strategy games and coding challenges are my favorite.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <i class="fab fa-html5"></i> HTML5
-                <div class="progress-bar"><div class="progress" style="width: 90%;">90%</div></div>
-            </div>
-            <div class="skill">
-                <i class="fab fa-css3-alt"></i> CSS3
-                <div class="progress-bar"><div class="progress" style="width: 85%;">85%</div></div>
-            </div>
-            <div class="skill">
-                <i class="fab fa-python"></i> Python
-                <div class="progress-bar"><div class="progress" style="width: 80%;">80%</div></div>
-            </div>
-            <div class="skill">
-                <i class="fas fa-cogs"></i> C
-                <div class="progress-bar"><div class="progress" style="width: 75%;">75%</div></div>
+            <div id="skills">
+                <h2 >Skills</h2>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="fab fa-html5"></i> HTML5
+                        <div class="progress-bar"><div class="progress" style="width: 90%;">90%</div></div>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-css3-alt"></i> CSS3
+                        <div class="progress-bar"><div class="progress" style="width: 85%;">85%</div></div>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-python"></i> Python
+                        <div class="progress-bar"><div class="progress" style="width: 80%;">80%</div></div>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-cogs"></i> C
+                        <div class="progress-bar"><div class="progress" style="width: 75%;">75%</div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
