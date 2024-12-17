@@ -6,364 +6,138 @@
     <title>Student Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2a9d8f;
-            --secondary-color: #264653;
-            --accent-color: #f4d482;
-            --text-color: #2b2d42;
-            --light-bg: #f8f9fa;
-            --hover-color: #e76f51; /* Color for hover effect */
-        }
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#hobbies-skills"><i class="fas fa-gamepad"></i> Hobbies & Skills</a></li>
+            <li><a href="#location"><i class="fas fa-map-marker-alt"></i> Location</a></li> <!-- Added Location link -->
+        </ul>
+    </nav>
+    
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-        }
+    <!-- Hero Section -->
+    <section id="hero">
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a passionate aspiring developer constantly learning and growing.</p>
+            <a href="#about" class="btn">Learn More About Me</a>
+            <!-- Social Links in Hero Section -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/yash-yadav-868388328?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5sPzNTkdRVuvzh3baG48Pg%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Yash12212" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:yashyadav12212@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            </div>
 
-        nav {
-            position: fixed;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px);
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 1rem rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
+        </div>
+    </section>
 
-        .logo {
-            color: var(--primary-color);
-            font-size: 2rem;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="yash.jpg" alt="Your Name" />
+            </div>
+            <div class="about-text">
+                <p>Hello, I'm Yash. A beginner developer with a strong interest in web development and a passion for learning new technologies. I'm excited to create clean and user-friendly websites and applications that can make a difference. I'm always eager to improve my skills and grow in the tech world.</p>
+            </div>
+        </div>
+    </section>
 
-        .logo:hover {
-            color: var(--hover-color);
-        }
+    <section id="hobbies-skills">
+        <h2>My Hobbies & Skills</h2>
+        <div class="hobbies-skills-container">
+            <div id="hobbies">
+                <h3>My Hobbies</h3>
+                <div class="hobby-grid">
+                    <div class="hobby-card">
+                        <h4><i class="fas fa-chess"></i> Chess</h4>
+                        <p>Strategizing and competing in chess games to sharpen my mind.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <h4><i class="fas fa-laptop-code"></i> Coding</h4>
+                        <p>Building projects and solving problems through programming.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <h4><i class="fas fa-gamepad"></i> Gaming</h4>
+                        <p>Enjoying strategy games and immersive experiences in virtual worlds.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <h4><i class="fas fa-tv"></i> Anime Watching</h4>
+                        <p>Watching anime and diving into different stories and worlds.</p>
+                    </div>
+                </div>
+            </div>
+            
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+            <div id="skills">
+                <h3>Skills</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="fab fa-html5"></i> HTML5
+                        <div class="progress-bar"><div class="progress" style="width: 90%;">90%</div></div>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-css3-alt"></i> CSS3
+                        <div class="progress-bar"><div class="progress" style="width: 65%;">65%</div></div>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-python"></i> Python
+                        <div class="progress-bar"><div class="progress" style="width: 80%;">80%</div></div>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-cogs"></i> NumPy, Pandas, Matplotlib
+                        <div class="progress-bar"><div class="progress" style="width: 55%;">55%</div></div>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-database"></i> MySQL
+                        <div class="progress-bar"><div class="progress" style="width: 80%;">80%</div></div>
+                    </div>
+                </div>                
+            </div>            
+        </div>
+    </section>
 
-        nav ul li a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            padding: 0.7rem 1.2rem;
-            font-weight: 500;
-            position: relative;
-            transition: all 0.3s ease;
-        }
+    <section id="location">
+        <h2>My Location</h2>
+        <p>Here is where you can find me!</p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6981.891387202628!2d77.63780328774432!3d28.959335189329842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c66a2deee8e85%3A0xa0e07b6e18ca8139!2sVed%20Vyas%20Puri%20-Phase%201%2C%20Meerut%2C%20Uttar%20Pradesh%20250002!5e0!3m2!1sen!2sin!4v1734197020523!5m2!1sen!2sin"
+            width="90%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    
 
-        nav ul li a:hover {
-            color: var(--primary-color);
-            background-color: rgba(42, 157, 143, 0.1);
-            border-radius: 25px;
-        }
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yash-yadav-868388328?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5sPzNTkdRVuvzh3baG48Pg%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Yash12212" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:yashyadav12212@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>        
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
 
-        /* Add scroll-margin-top for each section */
-        #home, #about, #hobbies-skills, #contact {
-            scroll-margin-top: 80px; /* Adjust this value according to your navbar height */
-        }
-
-        /* Additional padding to ensure spacing */
-        section {
-            padding-top: 80px; /* Adjust this value according to your navbar height */
-        }
-
-        /* Hero Section */
-        #hero {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 0 2rem;
-        }
-
-        #hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        #hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
-
-        #hero .btn {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        #hero .btn:hover {
-            background-color: var(--hover-color);
-        }
-
-        /* Social links for the hero section */
-        #hero .social-links {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        #hero .social-links a {
-            color: white;
-            font-size: 2rem;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        #hero .social-links a:hover {
-            color: var(--secondary-color); /* Change to match hover color */
-        }
-
-        /* About Section Styles */
-        #about {
-            padding: 3rem 6vw;
-            background-color: var(--light-bg);
-        }
-
-        #about h2 {
-            text-align: center;
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Container to hold text and image side by side */
-        .about-container {
-            display: flex;
-            align-items: center; /* Vertically center the content */
-            gap: 2rem;
-        }
-
-        /* About Image */
-        .about-image {
-            flex: 1;
-            text-align: center; /* Center the image inside its container */
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Makes the image circular */
-            max-width: 300px; /* Adjust as needed */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow to the image */
-        }
-
-        /* About Text */
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text p {
-            font-size: 1.2rem;
-            text-align: left;
-            color: var(--text-color);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-
-
-        #hobbies-skills {
-            padding: 3rem 6vw;
-            min-height: 100vh;
-        }
-
-        #hobbies-skills h2 {
-            text-align: center;
-            margin-bottom: 3rem; /* Increased spacing from the content below */
-            color: var(--primary-color);
-            font-size: 2.5rem; /* Larger font size for prominence */
-        }
-
-        #hobbies-skills h3 {
-            margin-bottom: 2rem; /* Added space below the section title */
-            color: var(--primary-color);
-            font-size: 2rem; /* Larger font size for subheadings */
-            text-align: center; /* Center-align the subheadings */
-        }
-
-        /* Flexbox to align containers and ensure equal height */
-        .hobbies-skills-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 3rem;
-            height: 100%; /* Ensure both sections stretch equally */
-        }
-
-        #hobbies {
-            flex: 1;
-        }
-
-        /* Hobbies Section Styles */
-        .hobby-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .hobby-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 3rem rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hobby-card:hover {
-            transform: translateY(-1rem);
-            box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.2);
-            background-color: var(--light-bg);
-        }
-
-        .hobby-card h4 {
-            margin-bottom: 1.5rem; /* Ensure space between the title and content */
-            color: var(--primary-color);
-            font-size: 1.3rem; /* Slightly larger font size for visibility */
-        }
-
-        .hobby-card p {
-            font-size: 1rem;
-            color: var(--text-color);
-        }
-
-        #skills {
-            flex: 1;
-        }
-
-        /* Skills Section Styles */
-        .skills-container {
-            padding: 3rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem; /* Add more space between individual skills */
-        }
-
-        .skill {
-            background: var(--light-bg);
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 500;
-            margin-bottom: 1.5rem; /* Add vertical space between skills */
-            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-            position: relative;
-        }
-
-        .skill:hover {
-            transform: translateX(1rem);
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 1.25rem;
-            background: #ddd;
-            border-radius: 1rem;
-            overflow: hidden;
-            margin-top: 0.625rem;
-            transition: background 0.3s ease;
-        }
-
-        .progress {
-            height: 100%;
-            background: var(--primary-color);
-            text-align: center;
-            color: var(--light-bg);
-            line-height: 1.25rem;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        .skill:hover .progress {
-            color: var(--primary-color);
-            background: var(--light-bg);
-        }
-
-        #location {
-            padding: 3rem 6vw;
-            text-align: center;
-            background-color: var(--light-bg);
-        }
-
-        #location h2 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #location p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--text-color);
-        }
-
-        .map-container {
-            position: relative;
-            height: 450px; /* Customize height if needed */
-            max-width: 100%;
-            margin: 0 auto;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-
-
-        footer {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        footer .social-links {
-            margin: 1rem 0;
-        }
-
-        footer .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer .social-links a:hover {
-            color: var(--primary-color);
-        }
-
-        footer p {
-            margin-top: 2rem; /* Ensure there is space above the footer text */
-            font-size: 1rem;
-        }
-
-    </style>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 

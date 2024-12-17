@@ -1,0 +1,520 @@
+/* Base Styles for Large Screens (Desktop) */
+:root {
+    --primary-color: #2a9d8f;
+    --secondary-color: #264653;
+    --accent-color: #f4d482;
+    --text-color: #2b2d42;
+    --light-bg: #f8f9fa;
+    --hover-color: #e76f51;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 1rem rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--hover-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    background-color: rgba(42, 157, 143, 0.1);
+    border-radius: 25px;
+}
+
+/* Add scroll-margin-top for each section */
+#home, #about, #hobbies-skills, #contact {
+    scroll-margin-top: 10vh; /* 10% of the viewport height */
+}
+
+/* Additional padding to ensure spacing */
+section {
+    padding-top: 10vh; /* 10% of the viewport height */
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+#hero .btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#hero .btn:hover {
+    background-color: var(--hover-color);
+}
+
+#hero .social-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#hero .social-links a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#hero .social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* About Section Styles */
+#about {
+    padding: 3rem 6vw;
+    background-color: var(--light-bg);
+}
+
+#about h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* About Container */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* About Image */
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* About Text */
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    text-align: left;
+    color: var(--text-color);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#hobbies-skills {
+    padding: 3rem 6vw;
+    min-height: 100vh;
+}
+
+#hobbies-skills h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+#hobbies-skills h3 {
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.hobbies-skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+#hobbies {
+    flex: 1;
+}
+
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.hobby-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 3rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.2);
+    background-color: var(--light-bg);
+}
+
+.hobby-card h4 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.hobby-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+#skills {
+    flex: 1;
+}
+
+.skills-container {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill {
+    background: var(--light-bg);
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+.skill:hover {
+    transform: translateX(1rem);
+    background: var(--primary-color);
+    color: white;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 1.25rem;
+    background: #ddd;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 0.625rem;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary-color);
+    text-align: center;
+    color: var(--light-bg);
+    line-height: 1.25rem;
+}
+
+.skill:hover .progress {
+    color: var(--primary-color);
+    background: var(--light-bg);
+}
+
+#location {
+    padding: 3rem 6vw;
+    text-align: center;
+    background-color: var(--light-bg);
+}
+
+#location h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#location p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.map-container {
+    position: relative;
+    height: 450px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer .social-links {
+    margin: 1rem 0;
+}
+
+footer .social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--primary-color);
+}
+
+footer p {
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+
+/* Responsive Styles for max-width 360px */
+@media (max-width: 400px) {
+    body {
+        font-size: 14px; /* Use a smaller font size for small screens */
+        line-height: 1.6;
+        padding: 0 1rem; /* Padding on body to give space around content */
+    }
+
+    nav {
+        padding: 1rem 0.5rem; /* Less padding to conserve space */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        gap: 1rem; /* Adequate gap between nav items */
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Reduced font size for logo */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem; /* Vertical gap between links */
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem; /* Adjusted padding for smaller screens */
+    }
+
+    #hero {
+        padding: 2rem 1rem; /* Adjusted padding to avoid content overflow */
+        text-align: center;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem; /* Slightly smaller heading */
+        margin-bottom: 1.5rem; /* More space between heading and paragraph */
+    }
+
+    #hero p {
+        font-size: 1rem;
+        margin-bottom: 2rem; /* Extra margin below the paragraph */
+    }
+
+    #hero .btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+        margin-bottom: 1.5rem; /* Space below button */
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem; /* Reduced gap between image and text */
+    }
+
+    .about-image img {
+        width: 70%;
+        max-width: 250px; /* Smaller image size for small screens */
+        margin-bottom: 1.5rem; /* More space below the image */
+    }
+
+    .about-text p {
+        font-size: 1rem;
+        max-width: 320px; /* Limit text width for better readability */
+        margin-bottom: 2rem; /* Add extra space for text separation */
+    }
+
+    #hobbies-skills {
+        padding: 3rem 1rem;
+        min-height: 100vh;
+    }
+
+    #hobbies-skills h2 {
+        margin-bottom: 2rem; /* More space between section title and content */
+        font-size: 2rem; /* Adjusted font size */
+    }
+
+    #hobbies-skills h3 {
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    /* Stack hobbies and skills vertically */
+    .hobbies-skills-container {
+        display: flex;
+        flex-direction: column; /* Stack vertically */
+        gap: 2rem; /* Space between hobby and skill sections */
+    }
+
+    #hobbies {
+        flex: 1;
+    }
+
+    .hobby-grid {
+        grid-template-columns: 1fr; /* Stack hobby cards vertically */
+        gap: 1.5rem; /* Gap between each hobby card */
+        padding-bottom: 3rem; /* Padding at the bottom for spacing */
+    }
+
+    .hobby-card {
+        padding: 1rem;
+        margin-bottom: 1.5rem; /* Space between cards */
+    }
+
+    .hobby-card h4 {
+        font-size: 1.1rem;
+    }
+
+    #skills {
+        flex: 1;
+    }
+
+    .skills-container {
+        padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .skill {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+        margin-bottom: 1.5rem;
+        width: 100%; /* Full width for skills */
+    }
+
+    .progress-bar {
+        margin-top: 1rem; /* Extra space before progress bar */
+    }
+
+    #location {
+        padding: 4rem 1rem;
+        text-align: center;
+        background-color: var(--light-bg);
+    }
+
+    #location h2 {
+        margin-bottom: 1.5rem; /* More space between title and content */
+    }
+
+    #location p {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem; /* Add space to avoid cramping */
+    }
+
+    .map-container {
+        height: 250px; /* Smaller map height for small screens */
+        margin-bottom: 1rem; /* Space below map */
+    }
+
+    footer {
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    footer p {
+        margin-top: 2rem;
+        font-size: 1rem;
+    }
+
+    footer .social-links {
+        margin: 1.5rem 0; /* Adequate spacing between social links */
+    }
+
+    footer .social-links a {
+        font-size: 1.5rem;
+        margin: 0 1rem;
+    }
+}
