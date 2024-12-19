@@ -229,6 +229,9 @@ section {
 }
 
 .hobby-card h4 {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;  /* Adjust space between icon and text */
     margin-bottom: 1.5rem;
     color: var(--primary-color);
     font-size: 1.3rem;
