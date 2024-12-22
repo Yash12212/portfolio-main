@@ -1,0 +1,394 @@
+/* Navigation */
+nav {
+    background: var(--nav-bg);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 1rem var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform var(--transition-medium), background-color var(--transition-medium), box-shadow var(--transition-medium);
+    will-change: transform;
+    transform: translateY(0);
+}
+
+nav.hidden {
+    transform: translateY(-100%);
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.logo:hover,
+.logo:focus {
+    color: var(--hover-color);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    transition: var(--transition-medium);
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    padding: 0.7rem 1.2rem;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+nav ul li a.active {
+    color: var(--primary-color);
+    background-color: rgba(42, 157, 143, 0.1);
+    border-radius: 25px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: rgba(42, 157, 143, 0.1);
+    border-radius: 25px;
+    color: var(--primary-color);
+    outline: none;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        gap: 0;
+        position: fixed;
+        top: 4rem;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        transform: translateY(-150%);
+        opacity: 0;
+        box-shadow: 0 4px 1rem var(--shadow-color);
+    }
+
+    nav ul.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-full);
+    background: var(--card-bg);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-medium);
+    will-change: transform, background-color, color;
+}
+
+#theme-toggle:hover {
+    background: var(--primary-color);
+    color: var(--card-bg);
+    transform: rotate(360deg);
+}
+
+#theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--card-bg),
+                0 0 0 4px var(--primary-color);
+}
+
+/* Cards */
+.hobby-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 10px 3rem var(--shadow-color);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.hobby-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(42, 157, 143, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.hobby-card:hover {
+    background-color: var(--light-bg);
+    box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-1rem) scale(1.02);
+}
+
+.hobby-card:hover::before {
+    transform: translateX(100%);
+}
+
+/* Progress Bars */
+.progress-bar {
+    background: var(--progress-outer-bg);
+    border-radius: 1rem;
+    height: 1.25rem;
+    margin-top: 0.625rem;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress {
+    background: var(--progress-inner-bg);
+    color: var(--progress-text-dark);
+    height: 100%;
+    line-height: 1.25rem;
+    text-align: center;
+    width: 0;
+    position: relative;
+    overflow: hidden;
+    transform-origin: left;
+    will-change: width;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+                background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+.progress.animate {
+    width: var(--progress-width);
+}
+
+.skill:hover .progress-bar {
+    background: var(--progress-inner-bg);
+}
+
+.skill:hover .progress {
+    background: var(--progress-outer-bg);
+    color: var(--progress-text-light);
+}
+
+/* Skills */
+.skill {
+    background: var(--card-bg);
+    border-radius: 50px;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(42, 157, 143, 0.3);
+}
+
+.skill i {
+    color: var(--skill-icon-color);
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill:hover i {
+    transform: scale(1.1);
+    color: var(--skill-icon-color);
+}
+
+.skill:hover .progress {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.btn:hover::before {
+    transform: translateX(100%);
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--hover-color);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    background: var(--light-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--hover-color);
+    box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.2);
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links a i {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    color: var(--accent-color);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-toggle i {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-toggle:hover i {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    #theme-toggle {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 0.9rem;
+    }
+}

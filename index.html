@@ -7,7 +7,10 @@
     <title>Yash's Portfolio | Web Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <!-- CSS Files (Order matters for cascade) -->
+    <link rel="stylesheet" href="css/base.css">      <!-- Base styles, resets, variables, animations -->
+    <link rel="stylesheet" href="css/components.css"> <!-- Reusable components -->
+    <link rel="stylesheet" href="css/layout.css">    <!-- Section-specific styles -->
 </head>
 <body>
     <div class="loading"></div>
@@ -218,6 +221,7 @@
         <p>&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,208 @@
+/* CSS Reset and Variables */
+:root {
+    /* Colors */
+    --primary-color: #2D9CDB;    /* Modern Blue - Professional & trustworthy */
+    --secondary-color: #6C63FF;  /* Vibrant Purple - Creative & innovative */
+    --accent-color: #F2C94C;     /* Warm Yellow - Energetic & friendly */
+    --text-color: #2D3436;       /* Dark Grey - Clear & readable */
+    --light-bg: #F7FAFC;         /* Cool White - Clean & modern */
+    --hover-color: #FF6B6B;      /* Coral Red - Engaging & dynamic */
+    --card-bg: #FFFFFF;          /* Pure White - Fresh & clean */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --nav-bg: rgba(247, 250, 252, 0.95);
+    
+    /* Typography */
+    --h1-size: 3rem;
+    --h2-size: 2.5rem;
+    --h3-size: 2rem;
+    --h4-size: 1.3rem;
+    --body-size: 1rem;
+    --small-size: 0.9rem;
+    
+    /* Spacing */
+    --section-padding: 5rem 6vw;
+    --card-padding: 1.5rem;
+    --element-gap: 2rem;
+    
+    /* Transitions */
+    --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Border Radius */
+    --radius-small: 0.5rem;
+    --radius-medium: 1rem;
+    --radius-large: 2rem;
+    --radius-full: 50%;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --primary-color: #56CCF2;    /* Bright Blue - Vibrant in dark */
+    --secondary-color: #845EF7;  /* Rich Purple - Bold & modern */
+    --accent-color: #FFD93D;     /* Bright Yellow - Eye-catching */
+    --text-color: #F8F9FA;       /* Bright White - High contrast */
+    --light-bg: #1A202C;         /* Deep Blue-Grey - Sophisticated dark */
+    --hover-color: #FF8787;      /* Soft Red - Warm & inviting */
+    --card-bg: #2D3748;          /* Blue-Grey - Professional dark */
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --nav-bg: rgba(26, 32, 44, 0.95);
+    --progress-outer-bg: #4A5568; /* Dark outer progress bar */
+    --progress-inner-bg: #E2E8F0; /* Light inner progress bar */
+    --progress-text-light: #F8F9FA; /* Light text for dark backgrounds */
+    --progress-text-dark: #2D3748; /* Dark text for light backgrounds */
+    --skill-icon-color: #F8F9FA; /* Light icon color for dark mode */
+}
+
+/* Light Mode Variables (default) */
+:root {
+    /* Colors */
+    --primary-color: #2D9CDB;    /* Modern Blue - Professional & trustworthy */
+    --secondary-color: #6C63FF;  /* Vibrant Purple - Creative & innovative */
+    --accent-color: #F2C94C;     /* Warm Yellow - Energetic & friendly */
+    --text-color: #2D3436;       /* Dark Grey - Clear & readable */
+    --light-bg: #F7FAFC;         /* Cool White - Clean & modern */
+    --hover-color: #FF6B6B;      /* Coral Red - Engaging & dynamic */
+    --card-bg: #FFFFFF;          /* Pure White - Fresh & clean */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --nav-bg: rgba(247, 250, 252, 0.95);
+    --progress-outer-bg: #E2E8F0; /* Light outer progress bar */
+    --progress-inner-bg: #2D3748; /* Dark inner progress bar */
+    --progress-text-light: #F8F9FA; /* Light text for dark backgrounds */
+    --progress-text-dark: #2D3748; /* Dark text for light backgrounds */
+    --skill-icon-color: #2D3748; /* Dark icon color for light mode */
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global transition for theme changes */
+*, *::before, *::after {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Animations */
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes wave {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Reveal Animation Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) var(--delay, 0s),
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) var(--delay, 0s);
+}
+
+.reveal.revealed > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add delay to child elements */
+.reveal.revealed > *:nth-child(1) { --delay: 0.1s; }
+.reveal.revealed > *:nth-child(2) { --delay: 0.2s; }
+.reveal.revealed > *:nth-child(3) { --delay: 0.3s; }
+.reveal.revealed > *:nth-child(4) { --delay: 0.4s; }
+.reveal.revealed > *:nth-child(5) { --delay: 0.5s; }
+
+/* Loading Animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: loading 1s linear infinite;
+}
