@@ -67,10 +67,11 @@ body.dark-mode {
     --shadow-color: rgba(0, 0, 0, 0.1);
     --nav-bg: rgba(247, 250, 252, 0.95);
     --progress-outer-bg: #E2E8F0; /* Light outer progress bar */
-    --progress-inner-bg: #2D3748; /* Dark inner progress bar */
-    --progress-text-light: #F8F9FA; /* Light text for dark backgrounds */
-    --progress-text-dark: #2D3748; /* Dark text for light backgrounds */
+    --progress-inner-bg: #3c79e4; /* Dark inner progress bar */
+    --progress-text-dark: #FFFFFF; /* Pure white text for dark backgrounds */
+    --progress-text-light: #1A202C; /* Very dark text for light backgrounds */
     --skill-icon-color: #2D3748; /* Dark icon color for light mode */
+    --progress-text-hover: #FFFFFF; /* White text for hover state */
 }
 
 /* Base Reset */
