@@ -4,6 +4,13 @@ section {
     scroll-margin-top: 5rem;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    }
+}
+
 /* Hero Section */
 #hero {
     align-items: flex-end;
