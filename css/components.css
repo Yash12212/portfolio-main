@@ -1,6 +1,7 @@
 /* Navigation */
 nav {
     background: var(--nav-bg);
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     box-shadow: 0 4px 1rem var(--shadow-color);
     display: flex;
@@ -66,6 +67,7 @@ nav ul li a:focus {
 @media (max-width: 768px) {
     nav ul {
         background: var(--nav-bg);
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         flex-direction: column;
         gap: 0;
@@ -138,6 +140,7 @@ nav ul li a:focus {
     background: var(--card-bg);
     border-radius: 1rem;
     box-shadow: 0 10px 3rem var(--shadow-color);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 1.5rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
