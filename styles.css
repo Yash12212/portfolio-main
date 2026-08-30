@@ -8,10 +8,21 @@
     --hover-color: #e76f51;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--hover-color);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 body {
@@ -22,7 +33,8 @@ body {
 }
 
 nav {
-    position: relative;
+    position: sticky;
+    top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(15px);
@@ -67,7 +79,7 @@ nav ul li a:hover {
 }
 
 /* Add scroll-margin-top for each section */
-#home, #about, #hobbies-skills, #contact {
+#hero, #about, #hobbies-skills, #location {
     scroll-margin-top: 10vh; /* 10% of the viewport height */
 }
 
@@ -82,7 +94,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 60%, #3db8a9 100%);
     color: white;
     text-align: center;
     padding: 0 2rem;
@@ -519,5 +531,58 @@ footer p {
     footer .social-links a {
         font-size: 1.5rem;
         margin: 0 1rem;
+    }
+}
+
+/* ===== Back to top button ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--hover-color);
+}
+
+/* ===== Responsive map ===== */
+.map-container iframe {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
 }

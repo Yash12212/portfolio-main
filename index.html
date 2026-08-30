@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portfolio</title>
+    <title>Yash Yadav | Student Portfolio</title>
+    <meta name="description" content="Portfolio of Yash Yadav — an aspiring developer passionate about web development, Python and data.">
+    <meta name="author" content="Yash Yadav">
+    <meta property="og:title" content="Yash Yadav | Student Portfolio">
+    <meta property="og:description" content="Portfolio of Yash Yadav — an aspiring developer passionate about web development, Python and data.">
+    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -29,9 +34,9 @@
             <a href="#about" class="btn">Learn More About Me</a>
             <!-- Social Links in Hero Section -->
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/yash-yadav-868388328?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5sPzNTkdRVuvzh3baG48Pg%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Yash12212" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:yashyadav12212@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/yash-yadav-868388328" target="_blank" rel="noopener noreferrer" aria-label="Connect with me on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://github.com/Yash12212" target="_blank" rel="noopener noreferrer" aria-label="View my GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="mailto:yashyadav12212@gmail.com" aria-label="Send me an email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
             </div>
 
         </div>
@@ -42,7 +47,7 @@
         <h2>About Me</h2>
         <div class="about-container">
             <div class="about-image">
-                <img src="yash.jpg" alt="Your Name" />
+                <img src="yash.jpg" alt="Portrait of Yash Yadav" />
             </div>
             <div class="about-text">
                 <p>Hello, I'm Yash. A beginner developer with a strong interest in web development and a passion for learning new technologies. I'm excited to create clean and user-friendly websites and applications that can make a difference. I'm always eager to improve my skills and grow in the tech world.</p>
@@ -112,6 +117,7 @@
             width="90%"
             height="400"
             style="border:0;"
+            title="Map showing my location in Meerut, Uttar Pradesh"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -121,12 +127,25 @@
 
     <footer>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/yash-yadav-868388328?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5sPzNTkdRVuvzh3baG48Pg%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Yash12212" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:yashyadav12212@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/yash-yadav-868388328" target="_blank" rel="noopener noreferrer" aria-label="Connect with me on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://github.com/Yash12212" target="_blank" rel="noopener noreferrer" aria-label="View my GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+            <a href="mailto:yashyadav12212@gmail.com" aria-label="Send me an email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
         </div>        
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        <p>&copy; <span id="year">2024</span> Yash Yadav. All rights reserved.</p>
     </footer>
+
+    <a href="#hero" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+
+    <script>
+        // Keep copyright year current
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Show/hide back-to-top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 400);
+        }, { passive: true });
+    </script>
 
 </body>
 </html>
